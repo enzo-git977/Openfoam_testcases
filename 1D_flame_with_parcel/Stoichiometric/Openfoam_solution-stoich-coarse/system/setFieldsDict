@@ -1,0 +1,48 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      setFieldsDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+defaultFieldValues
+(
+    volScalarFieldValue H2  2.85221e-02
+    volScalarFieldValue AR  0.0000289
+    volScalarFieldValue N2  7.45097e-01
+    volScalarFieldValue O2  2.26352e-01
+    volScalarFieldValue OH  0
+    volScalarFieldValue H2O 0
+    volScalarFieldValue HE  0
+    volScalarFieldValue T   300
+);
+
+regions
+(
+    //- combustion product region
+    boxToCell
+    {
+        box (0.02 -1 -1) (0.055 1 1);
+
+        fieldValues
+        (
+            volScalarFieldValue H2  1.15622e-03
+            volScalarFieldValue O2  7.61863e-03
+            volScalarFieldValue H2O 2.39908e-01
+            volScalarFieldValue N2  7.4572323e-01
+            volScalarFieldValue OH  5.59392e-03
+            volScalarFieldValue HE  0
+            volScalarFieldValue T   2381.57048161251 //combustion product temperature
+        );
+    }
+);
+
+// ************************************************************************* //

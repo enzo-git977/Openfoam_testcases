@@ -1,0 +1,47 @@
+# --- Exclude entire folders you don't want in Git ---
+cavity/
+h2/
+Testcase_methane/
+1D_flame_propagation_testcase/
+
+# --- Ignore all OpenFOAM time directories everywhere ---
+[0-9]*/          # folders like 0/, 1/, 100/ (numeric)
+[0-9]*.[0-9]*/   # folders like 0.0001/, 5.2/, 200.5/
+
+# But always keep the initial "0/" folder
+!*/0/
+
+# --- Ignore postProcessing folders anywhere ---
+postProcessing/
+
+# --- Ignore processors folders anywhere ---
+processor*/
+
+# --- Ignore figures anywhere ---
+figures*/
+
+# --- Ignore solver outputs/logs anywhere ---
+*.out
+log.*
+
+# --- Ignore backup/editor junk ---
+*.old
+*~
+
+# --- Ignore specific folders in any subfolder ---
+obsolete_fcts/
+old_mech_figures/
+PyCSP/
+
+# subfolders : Cantera 
+testcase_h2_Stoichiometric/Cantera_solution_Stoich/data_Stoichiometric/
+testcase_h2_Stoichiometric/Cantera_solution_Stoich/figures_Stoichiometric/
+testcase_h2_Stoichiometric/Cantera_solution_Stoich/mech/
+
+# subfolders : Openfoam
+testcase_h2_Stoichiometric/Openfoam_solution_Stoich/chemkin/old_chem/ 
+
+
+
+
+

@@ -1,0 +1,7 @@
+Procedure
+
+cp -r 0.bak 0
+blockMesh
+setFields
+decomposePar
+mpirun -np 2 foamRun -parallel > log.foamRun 2>&1 &

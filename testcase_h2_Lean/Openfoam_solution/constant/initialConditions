@@ -1,0 +1,35 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      initialConditions;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+constantProperty pressure;
+
+fractionBasis  mole;
+
+fractions
+{
+    // Mole fractions (ϕ = 0.45) given by cantera
+    H2              0.159011;
+    N2              0.664293;
+    AR              0.000018;
+    O2              0.176678;
+}
+
+p               202650;
+
+T               1000;
+
+
+// ************************************************************************* //

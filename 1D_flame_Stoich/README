@@ -1,0 +1,21 @@
+# First step 
+In Cantera_solution folder :
+1) python3 Cantera_solution_Stoichiometric.py : run Cantera simulation and produce thermochemical data (T, species mass fraction) over spatial domain
+
+# Second step 
+In 1D_flame folder :
+2) python3 Compare_OFvsCantera_Stoich.py : plot Temperature and Species mass fraction for bothn Cantera and OF, check that discrepancies are minimal
+
+# Third step 
+In 1D_flame folder :
+3) python3 Get_eigenval_vect_Stoich.py : computes eignevalues and eigenvectors for both Cantera and OF and for all spatial points. Stored into data_eigen folder
+
+# Fourth step 
+In 1D_flame folder :
+4) python3 Temp_comparaison_Stoich.py : 
+
+
+Fifth step
+In 1D_flame folder :
+5) python3 csp_analysis_Stoich.py
+ 
