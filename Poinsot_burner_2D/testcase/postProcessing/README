@@ -1,0 +1,33 @@
+#======= Function for handling time folders (do first) ======# 
+
+python3 find_parcel.py : find the first time folder with aircloud.dat file in it not empty so you can delete all time folders that are prior to this one
+
+python3 Clear_data.py : remove unecessary time folders
+
+
+#======= Function csp on a given plane (vtk file) ======# 
+
+python3 Get_eigen_vtk_original.py :  Load vtk file plane and computes eignevalues, vectors of the given plane and saves them in Eigen_data folder
+
+python3 Plotting_vtk_original.py :  Performs csp analysis with Pycsp like radical pointers computations and plot them
+
+python3 Get_eigen_vtk.py cuttingPlanes/0.037/zMid.vtk 0.037 : :  Load vtk file plane and computes eignevalues, vectors of the given plane and saves them in Eigen_data folder for a given time 
+
+python3 Plotting_vtk.py cuttingPlanes/0.037/zMid.vtk 0.037  :  Performs csp analysis like radical pointers computations and plot them for a given time
+
+python3 All_time_get_eigen.py : run script Get_eigen_vtk.py for all time folders available in cutting planes
+
+python3 All_time_Plotting.py : run script Plotting_vtk.py for all time folders available in cutting planes
+
+
+#======= Function csp on a parcel (.dat file) ======# 
+
+python3 mycsp_analysis_1parcel.py                : Does csp analysis with Pycsp of a given parcel
+python3 All_time_mycsp_analysis_1parcel.py       : run python3 mycsp_analysis_1parcel.py for all time folders available 
+python3 parcel_plot_Temperaturebackground_csp.py : plot a given parcel trajectory with temperature and explosiveness status at each timestep
+the images are saved in the image_parcel folder
+
+
+
+
+

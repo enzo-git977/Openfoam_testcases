@@ -1,0 +1,30 @@
+! generator: yaml2ck
+! cantera-version: 3.1.0
+! date: Fri, 27 Jun 2025 10:32:06 +0200
+! input-files: ['hydrogen_mech.yaml']
+!
+! Generated from file 2STEP_mech by ck2cti on Wed Jul 29 11:47:22 2009  Transport data from file 2STEP_tran.
+
+ELEM
+C H O N
+END
+
+SPECIES
+CO  C3H8  CO2  H2O  O2  N2
+END
+
+REACTIONS
+C3H8 + 3.5 O2 => 3 CO + 4 H2O 5823200000000.002 0.0 34000.0
+CO + 0.5 O2 <=> CO2           1999999999.9999998 0.0 12000.0
+END
+
+
+
+TRANSPORT
+CO                 1    98.100     3.650     0.000     1.950     1.800
+C3H8               2   266.800     4.980     0.000     0.000     1.000
+CO2                1   244.000     3.760     0.000     2.650     2.100
+H2O                2   572.400     2.600     1.840     0.000     4.000
+O2                 1   107.400     3.460     0.000     1.600     3.800
+N2                 1    97.530     3.620     0.000     1.760     4.000
+END
