@@ -133,7 +133,7 @@ fvec_foam = np.array(fvec_foam)
 print("Eigenvalues and eigenvectors for Foam simulation obtained")    
 
 # just for testing 
-"""
+
 # === Plot Temperature ============================================================================================
 print("Plotting Temperature...")
 plt.figure(figsize=(10, 6))
@@ -141,11 +141,12 @@ plt.plot(time, T, label='Cantera', color='firebrick')
 plt.plot(time_foam, T_foam, label='OpenFOAM', color='navy',marker= 'o', linestyle='none') # plot every 5 points
 plt.xlabel('Time [s]')
 plt.ylabel('Temperature [K]')
-plt.title('Temperature Profile: Cantera vs OpenFOAM')
+#plt.title('Temperature Profile: Cantera vs OpenFOAM')
 plt.legend(fontsize=12, frameon=False)
 plt.grid(False)
 plt.xlim(0, 0.001)
-plt.savefig(f"{output_dir}/OFvsCantera_Temperature.png", dpi=300)
+#plt.savefig(f"{output_dir}/OFvsCantera_Temperature.png", dpi=300)
+plt.savefig(f"{output_dir}/OFvsCantera_Temperature.pdf", dpi=300)
 plt.close()
 
 # === Plot Species Mass Fractions ================================================================================
@@ -175,14 +176,14 @@ for ax in axs[-n_col:]:
 handles, labels = axs[0].get_legend_handles_labels()
 axs[0].legend(handles, labels, loc='upper right', fontsize=12, frameon=False)
     
-fig.suptitle('Species Mass Fraction Profiles: Cantera vs OpenFOAM', fontsize=14)
+#fig.suptitle('Species Mass Fraction Profiles: Cantera vs OpenFOAM', fontsize=14)
 fig.tight_layout(rect=[0, 0, 1, 0.96])
-plt.savefig(f"{output_dir}/OFvsCantera_MassSpecies.png", dpi=300)
+#plt.savefig(f"{output_dir}/OFvsCantera_MassSpecies.png", dpi=300)
+plt.savefig(f"{output_dir}/OFvsCantera_MassSpecies.pdf", dpi=300)
 plt.close()
 
 print(f"Plots saved in '{output_dir}/' folder.")
-"""
-"""
+
 # === Plot eigenvalue magnitudes ==============================================================
 # Compute log-scaled eigenvalues
 logevals_ct = np.clip(np.log10(1.0 + np.abs(evals.real)), 0, 100) * np.sign(evals.real)
@@ -213,16 +214,18 @@ for idx in range(logevals_of.shape[1]):
 
 plt.xlabel('Time [s]')
 plt.ylabel(r'$\log_{10}(|\mathrm{Re}(\lambda)| + 1) \cdot \mathrm{sign}(\mathrm{Re}(\lambda))$')
-plt.title("Eigenvalue Comparison: Cantera vs. OpenFOAM")
+#plt.title("Eigenvalue Comparison: Cantera vs. OpenFOAM")
 plt.xlim([0., 0.001])
 plt.ylim([-9, 6])
 plt.grid(False)
 plt.legend(loc='upper right',fontsize=12, frameon=False)
 plt.tight_layout()
-plt.savefig(f'{output_dir}/Eigenvalues_Cantera_vs_OpenFOAM.png', dpi=500)
-plt.show()
+#plt.savefig(f'{output_dir}/Eigenvalues_Cantera_vs_OpenFOAM.png', dpi=500)
+plt.savefig(f'{output_dir}/Eigenvalues_Cantera_vs_OpenFOAM.pdf', dpi=500)
+plt.close()
+#plt.show()
 print(f"Eigenvalue comparison plot saved to {output_dir}/Eigenvalues_Cantera_vs_OpenFOAM.png")
-"""
+
 
 
 # === CSP Analysis of 6 points for OpenFOAM ==========================================================
@@ -306,11 +309,13 @@ for i, ax in enumerate(axs.flat):
     if i == 0:
         ax.legend(fontsize=12, frameon=False)
 
-plt.suptitle("Radical Pointers (Max Eigenvalue) at Selected Times\nComparison: Cantera vs OpenFOAM", fontsize=16)
+#plt.suptitle("Radical Pointers (Max Eigenvalue) at Selected Times\nComparison: Cantera vs OpenFOAM", fontsize=16)
 plt.tight_layout(rect=[0, 0, 1, 0.96])
 plt.ylim(0,1)
-plt.savefig(f"{output_dir}/radical_pointer_Cantera_vs_OpenFOAM.png", dpi=150)
-plt.show()
+#plt.savefig(f"{output_dir}/radical_pointer_Cantera_vs_OpenFOAM.png", dpi=150)
+plt.savefig(f"{output_dir}/radical_pointer_Cantera_vs_OpenFOAM.pdf", dpi=300) # for better display in report
+plt.close()
+#plt.show()
 #"""
 
 
@@ -429,7 +434,9 @@ plt.grid(True, linestyle='--', alpha=0.5)
 plt.gca().invert_yaxis()  # Highest value at top
 plt.tight_layout()
 plt.savefig(f"{output_dir}/API_Cantera_vs_OpenFOAM.png", dpi=150)
-plt.show()
+plt.savefig(f"{output_dir}/API_Cantera_vs_OpenFOAM.pdf", dpi=300)
+plt.close()
+#plt.show()
 #"""
 """
 # plot only one ====================================================================

@@ -127,10 +127,11 @@ print("Plotting barchart of integral error")
 plt.figure(figsize=(12,5))
 plt.bar(species,dict_error.values(),color='black')
 plt.ylabel("Relative integral error")
-plt.title(f"Integral error Cantera vs Openfoam ({x_min} to {x_max} mm)")
+#plt.title(f"Integral error Cantera vs Openfoam ({x_min} to {x_max} mm)")
 plt.grid(axis='y',linestyle='--', alpha=0.7)
 plt.tight_layout()
-plt.savefig(f"{output_dir}/OFvsCantera_errors.png", dpi=300)
+#plt.savefig(f"{output_dir}/OFvsCantera_errors.png", dpi=300)
+plt.savefig(f"{output_dir}/OFvsCantera_errors.pdf", dpi=300)
 plt.close()
 
 
@@ -146,7 +147,8 @@ plt.title('Temperature Profile: Cantera vs OpenFOAM')
 plt.legend(fontsize=12, frameon=False)
 plt.grid(False)
 plt.tight_layout()
-plt.savefig(f"{output_dir}/OFvsCantera_Temperature.png", dpi=300)
+#plt.savefig(f"{output_dir}/OFvsCantera_Temperature.png", dpi=300)
+plt.savefig(f"{output_dir}/OFvsCantera_Temperature.pdf", dpi=300)
 plt.close()
 
 # === Plot Species Mass Fractions ================================================================================
@@ -177,7 +179,8 @@ axs[0].legend(handles, labels, loc='upper right', fontsize=12, frameon=False)
     
 fig.suptitle('Species Mass Fraction Profiles: Cantera vs OpenFOAM', fontsize=14)
 fig.tight_layout(rect=[0, 0, 1, 0.96])
-plt.savefig(f"{output_dir}/OFvsCantera_MassSpecies.png", dpi=300)
+#plt.savefig(f"{output_dir}/OFvsCantera_MassSpecies.png", dpi=300)
+plt.savefig(f"{output_dir}/OFvsCantera_MassSpecies.pdf", dpi=300)
 plt.close()
 
 print("Plots saved in 'figures/' folder.")

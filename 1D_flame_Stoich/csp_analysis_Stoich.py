@@ -220,11 +220,11 @@ for i in range(n_points):
     if i == 0:
         ax.legend(fontsize=12, frameon=False)
 
-plt.suptitle("Radical Pointers (Max Eigenvalue) for selected points \nComparison: Cantera vs OpenFOAM", fontsize=12)
+#plt.suptitle("Radical Pointers (Max Eigenvalue) for selected points \nComparison: Cantera vs OpenFOAM", fontsize=12)
 plt.tight_layout(rect=[0, 0, 1, 0.96])
 plt.ylim(0,1)
-plt.savefig(f"{output_dir}/radical_pointer_Cantera_vs_OpenFOAM.png", dpi=150)
-print(f"plotting successful, result saved in {output_dir}/radical_pointer_Cantera_vs_OpenFOAM.png")
+plt.savefig(f"{output_dir}/radical_pointer_Cantera_vs_OpenFOAM.pdf", dpi=300)
+print(f"plotting successful, result saved in {output_dir}/radical_pointer_Cantera_vs_OpenFOAM.pdf")
 
 
 #===== Participation indexes at given position ============================================================================================
@@ -332,7 +332,7 @@ plt.legend(fontsize=12, frameon=False)
 plt.grid(True, linestyle='--', alpha=0.5)
 plt.gca().invert_yaxis()  # Highest value at top
 plt.tight_layout()
-plt.savefig(f"{output_dir}/API_Cantera_vs_OpenFOAM.png", dpi=150)
+plt.savefig(f"{output_dir}/API_Cantera_vs_OpenFOAM.png", dpi=300)
 print(f"plotting successful, result saved in {output_dir}/API_Cantera_vs_OpenFOAM.png")
 plt.show()
 
